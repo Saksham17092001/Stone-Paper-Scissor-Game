@@ -1,0 +1,396 @@
+*{
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+body{
+    background-color: #8CC461;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    border: 2px solid white;
+    padding: 1rem;
+    margin: 2rem 0;
+    border-radius: 10px;
+}
+.score-board{
+    display: flex;
+    gap: 25px;
+    justify-content: flex-end;
+    align-items: center;
+}
+.heading{
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.comp-score, .my-score{
+    background-color: white;
+    text-align: center;
+    width: 40%;
+    border-radius: 10px;
+    color: #252525;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+
+}
+.score-board p {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.score-board h1{
+    font-size: 4rem;
+    font-weight: 1000;
+}
+
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    background-image: url(Line\ 1.png), url(Line\ 2.png),url(Line\ 3.png);
+    background-repeat: no-repeat, no-repeat , no-repeat;
+    background-position-x: 50%, 65%, 35% ;
+    background-position-y: 25%, 50%, 50%;
+}
+
+.middle div{
+    background-color: white;
+    margin: 1rem 2rem;
+    text-align: center;
+    cursor: pointer;
+}
+.stone{
+    width: 140px;
+    border: 15px solid #0074B6;
+    border-radius: 50%;
+    padding: 1rem;
+    box-shadow: -1px 1px 11px 0px #00000059;
+    height: 140px;
+
+}
+.scissor{
+    width: 140px;
+    border: 15px solid #BD00FF;
+    border-radius: 50%;
+    padding: 1.5rem;
+    box-shadow: -1px 1px 11px 0px #00000059;
+    height: 140px;
+}
+
+
+.paper{
+    width: 140px;
+    border: 15px solid #FFA943;
+    border-radius : 50%;
+    padding: 1rem;
+    box-shadow: -1px 1px 11px 0px #00000059;
+    height: 140px;
+}
+
+.other{
+    text-align: center;
+    width: 140px;
+    border-radius : 50%;
+    padding: 1.2rem;
+    box-shadow: -1px 1px 11px 0px #00000059;
+    height: 140px;
+}
+
+.middle div:hover{
+    transform : scale(1.25);
+}
+
+.bottom{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.user-container,.result-container, .cpu-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 2.5rem;
+    margin: 2.5rem 0;
+}
+
+.cpu-container div , .user-container div{
+    text-align: center;
+}
+.result-container h1, .result-container h3 {
+    text-align: center;
+    letter-spacing: 1.5px;
+    margin:0.5rem;
+    font-weight: 800;
+}
+
+.result-container h1{
+    letter-spacing: 4px;
+    font-weight: 1000;
+}
+
+.result-container h3{
+    margin-top: 0;
+}
+.result-container{
+    margin-top: 5rem;
+}
+
+h1, h5, h3{
+    color: white;
+}
+
+#play-again{
+    cursor: pointer;
+    padding: 10px 30px 10px 30px;
+    color: #6B6B6B;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-top: 25px;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    gap: 15px;
+}
+
+.btn{
+    color: white;
+    background-color: #8CC461;
+    cursor: pointer;
+    border: 2.5px solid white;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    padding: 10px 20px 10px 20px;
+    letter-spacing:2.5px;
+    text-align: center;
+}
+
+#next-btn a{
+    text-decoration: none;
+}
+#next-btn{
+    display: none;
+}
+
+#gameRules{
+background-color: #004429;
+width: 300px;
+height: 350px;
+padding: 5px 25px 10px 25px;
+color: white;
+display: none;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+position: fixed;
+right: 50px;
+bottom: 100px;
+border: 6px solid #fff;
+border-radius: 10px;
+}
+
+#gameRules h1 {
+	text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 0px;
+}
+
+#gameRules ul {
+	margin-left: 10px;
+}
+
+#gameRules li {
+    font-size: 0.85rem;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+ul ::marker{
+    color: #FFD600;
+    font-size: 1rem;
+}
+
+#closeRules{
+    font-family: 'Dangrek';
+    font-size: 44px;
+	font-weight: 400;
+	position: absolute;
+	background-color: #ff0000;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	border: 6px solid #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: -40px;
+	right: -40px;
+	cursor: pointer;
+}
+
+.win{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8CC461;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.trophy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shield img{
+    position: absolute;
+    left: 43%;
+    top: 25%;
+}
+
+.star1,.star2, .star3, .star4, .star5, .star6, .star7, .star8, .star9 {
+	position: absolute;
+}
+.star1 {
+	width: 100px;
+	top: 30%;
+	left: 32%;
+	animation: twinkle 0.8s ease-in-out alternate-reverse infinite;
+}
+.star2 {
+	width: 100px;
+	top: 10%;
+	right: 35%;
+	animation: twinkle 0.8s ease-in-out alternate-reverse infinite;
+}
+.star3 {
+	right: 35%;
+	animation: twinkle 0.8s ease-in-out alternate-reverse infinite;
+}
+.star4 {
+	width: 40px;
+	top: 20%;
+	right: 30%;
+	animation: twinkle 0.6s ease-in-out alternate-reverse infinite;
+}
+.star5 {
+	top: 10%;
+	left: 40%;
+	animation: twinkle 0.8s ease-in-out alternate-reverse infinite;
+}
+.star6 {
+	top: 30%;
+	right: 30%;
+	animation: twinkle 1s ease-in-out alternate-reverse infinite;
+}
+.star7 {
+	width: 30px;
+	top: 15%;
+	right: 50%;
+	animation: twinkle 0.6s ease-in-out alternate-reverse infinite;
+}
+.star8 {
+	width: 30px;
+	top: 50%;
+	left: 40%;
+	animation: twinkle 0.4s ease-in-out alternate-reverse infinite;
+}
+.star9{
+    width: 60px;
+    top: 20%;
+    left: 36%;
+    animation: twinkle 0.6s ease-in-out alternate-reverse infinite;
+}
+
+@keyframes twinkle {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.winTitle{
+    font-size: 5rem;
+    font-family: 'Roboto';
+    color: #ffff;
+    margin-top: 20%;
+    letter-spacing: 5px;
+    margin-bottom: 0px;
+    }
+
+.des{
+    font-family: 'Roboto';
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 5px;
+    margin-top: 0px;
+}
+
+.animate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 25px solid #3B6720;
+    border-radius: 50%;
+    background: transparent;
+    animation: winner 0.5s ease-in-out alternate-reverse infinite
+}
+
+.animate::after {
+	content: "";
+	position: absolute;
+	display: block;
+	border: 18px solid #1DA82BC9;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	animation: winner 0.5s ease-in-out alternate-reverse infinite;
+}
+.animate::before {
+	content: "";
+	position: absolute;
+	display: block;
+	border: 18px solid #2E9A2563;
+	width: 230px;
+	height: 230px;
+	border-radius: 50%;
+    box-shadow: 0px 1px 62px 0px #00000021;
+	animation: winner 0.5s ease-in-out alternate-reverse infinite;
+}
+
+@keyframes winner {
+	0% {
+		transform: scale(0.8);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
